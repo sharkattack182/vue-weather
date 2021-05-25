@@ -14,6 +14,7 @@
 
       <div class="weather-box">
         <div class="temp">50</div>
+        <div class="weather">Rain</div>
       </div>
     </main>
   </div>
@@ -78,7 +79,7 @@ main {
 }
 
 .search-box .search-bar:focus {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.25);
   border-radius: 0px 16px 0px 16px;
   box-shadow: 0px 0px 8px regba(0, 0, 0, 0.25);
 }
@@ -116,5 +117,15 @@ main {
   background-color: rgba(255,255,255,0.25);
   border-radius: 16px;
   margin: 30px 0px;
+
+  box-shadow: 3px 6px rgba(0,0,0,0.25);
+}
+
+.weather-box .weather {
+  color: #FFF;
+  font-size: 48px;
+  font-weight: 700;
+  font-style: italic;
+  text-shadow: 3px 6px rgba(0,0,0,0.25);;
 }
 </style>
