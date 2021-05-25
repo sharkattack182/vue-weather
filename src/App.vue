@@ -2,7 +2,18 @@
   <div id="app">
     <main>
       <div class="search-box">
-        <input type="text" class="search-bar" placeholder="search...">
+        <input type="text" class="search-bar" placeholder="search..." />
+      </div>
+
+      <div class="weather-wrap">
+        <div class="location-box">
+          <div class="location">Athens PA</div>
+          <div class="date">Monday May 24 2021</div>
+        </div>
+      </div>
+
+      <div class="weather-box">
+        <div class="temp">50</div>
       </div>
     </main>
   </div>
@@ -36,7 +47,11 @@ export default {
 main {
   min-height: 100vh;
   padding: 25px;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0, .75));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.75)
+  );
 }
 
 .search-box {
@@ -56,16 +71,15 @@ main {
   outline: none;
   background: none;
 
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 0px 16px 0px 16px;
-  box-shadow: 0px 0px 8px regba(0,0,0,0.25);
-  transition: 0.4s
+  box-shadow: 0px 0px 8px regba(0, 0, 0, 0.25);
+  transition: 0.4s;
 }
 
 .search-box .search-bar:focus {
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 0px 16px 0px 16px;
-  box-shadow: 0px 0px 8px regba(0,0,0,0.25);
+  box-shadow: 0px 0px 8px regba(0, 0, 0, 0.25);
 }
-  
-  </style>
+</style>
