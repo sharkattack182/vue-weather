@@ -6,22 +6,26 @@
           type="text"
           class="search-bar"
           placeholder="search..."
-          v-model="query"
-          @keypress="fetchWeather"
+          v-model= "query"
+          @keypress= "fetchWeather"
         />
       </div>
 
-      <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
+      <div class="weather-wrap" v-if= "typeof weather.main !== 'undefined'" >
         <div class="location-box">
           <div class="location">
-            {{ weather.name }}, {{ weather.sys.country }}
+            {{ weather.name }}
           </div>
           <div class="date">Monday May 24 2021</div>
         </div>
 
         <div class="weather-box">
-          <div class="temp"> {{ Math.round(weather.main.temp) }} </div>
-          <div class="weather"> {{  }} </div>
+          <div class="temp">
+
+          </div>
+          <div class="weather">
+            <!-- {{  }}  -->
+          </div>
         </div>
       </div>
     </main>
@@ -31,7 +35,7 @@
 <script>
 export default {
   name: "app",
-  data () {
+  data() {
     return {
       api_key: "60bc1e306b6fedb9805794cb8ab47ed3",
       url_base: "api.openweathermap.org/data/2.5/",
@@ -41,13 +45,16 @@ export default {
   },
   methods: {
     fetchWeather(e) {
-      if (e.key == "Enter") {
+      if (e.keyCode == 13) {
+        console.log(`${this.url_base}weather?q=${this.query}&appid=${this.api_key}`)
         fetch(`${this.url_base}weather?q=${this.query}&appid=${this.api_key}`)
+        .then(res => {
+          res.json();
+        }).then(text => console.log(text))
       }
     },
     setResults(results) {
       this.weather = results;
-      console.log(results)
     },
   },
 };
